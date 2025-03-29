@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,6 +48,10 @@ const Navbar = () => {
           <button onClick={() => scrollToSection("contact")} className="nav-link">
             <span className="text-mint font-mono text-sm mr-1">04.</span> Contact
           </button>
+          <Link to="/merch" className="nav-link flex items-center">
+            <span className="text-mint font-mono text-sm mr-1">05.</span> Shop
+            <ShoppingBag className="ml-1 h-4 w-4 text-mint" />
+          </Link>
           <Button variant="outline" className="ml-4 border-mint text-mint hover:bg-mint/10">
             Resume
           </Button>
@@ -80,6 +85,10 @@ const Navbar = () => {
           <button onClick={() => scrollToSection("contact")} className="nav-link">
             <span className="text-mint font-mono text-sm block mb-1 text-center">04.</span> Contact
           </button>
+          <Link to="/merch" className="nav-link flex flex-col items-center">
+            <span className="text-mint font-mono text-sm block mb-1 text-center">05.</span> Shop
+            <ShoppingBag className="mt-1 h-4 w-4 text-mint" />
+          </Link>
           <Button variant="outline" className="mt-4 border-mint text-mint hover:bg-mint/10">
             Resume
           </Button>
