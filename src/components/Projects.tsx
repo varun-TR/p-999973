@@ -1,6 +1,14 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Folder } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projects = [
   {
@@ -66,6 +74,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  const otherProjects = projects.filter(p => !p.featured);
+  
   return (
     <section id="work" className="py-24 px-6 md:px-12 bg-navy-dark">
       <div className="max-w-6xl mx-auto">
@@ -134,46 +144,60 @@ const Projects = () => {
           Other Noteworthy Projects
         </h3>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.filter(p => !p.featured).map((project, index) => (
-            <Card 
-              key={project.id} 
-              className="bg-navy-light border-navy-light h-full hover:-translate-y-2 transition-transform opacity-0 animate-fade-in"
-              style={{ animationDelay: `${300 + index * 100}ms` }}
-            >
-              <CardContent className="p-7 h-full flex flex-col">
-                <div className="flex justify-between items-center mb-6">
-                  <Folder className="text-mint" size={40} />
-                  <div className="flex gap-4">
-                    {project.links.github && (
-                      <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-slate hover:text-mint transition-colors">
-                        <Github size={20} />
-                      </a>
-                    )}
-                    {project.links.live && (
-                      <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-slate hover:text-mint transition-colors">
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-slate-light mb-2">
-                  <a href={project.links.live || project.links.github} className="hover:text-mint transition-colors">
-                    {project.title}
-                  </a>
-                </h3>
-                
-                <p className="text-slate mb-6 flex-grow">{project.description}</p>
-                
-                <ul className="flex flex-wrap gap-3 mt-auto text-xs font-mono text-slate">
-                  {project.tags.map((tag, i) => (
-                    <li key={i}>{tag}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="relative py-4">
+          <Carousel 
+            className="w-full opacity-0 animate-fade-in animate-delay-200"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {otherProjects.map((project, index) => (
+                <CarouselItem key={project.id} className="md:basis-1/3 lg:basis-1/3">
+                  <Card 
+                    className="bg-navy-light border-navy-light h-full hover:-translate-y-2 transition-transform"
+                  >
+                    <CardContent className="p-7 h-full flex flex-col">
+                      <div className="flex justify-between items-center mb-6">
+                        <Folder className="text-mint" size={40} />
+                        <div className="flex gap-4">
+                          {project.links.github && (
+                            <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-slate hover:text-mint transition-colors">
+                              <Github size={20} />
+                            </a>
+                          )}
+                          {project.links.live && (
+                            <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="text-slate hover:text-mint transition-colors">
+                              <ExternalLink size={20} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-slate-light mb-2">
+                        <a href={project.links.live || project.links.github} className="hover:text-mint transition-colors">
+                          {project.title}
+                        </a>
+                      </h3>
+                      
+                      <p className="text-slate mb-6 flex-grow">{project.description}</p>
+                      
+                      <ul className="flex flex-wrap gap-3 mt-auto text-xs font-mono text-slate">
+                        {project.tags.map((tag, i) => (
+                          <li key={i}>{tag}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-end space-x-2 mt-6">
+              <CarouselPrevious className="relative static translate-y-0 left-0 right-auto text-mint border-mint hover:bg-mint/10 hover:text-mint" />
+              <CarouselNext className="relative static translate-y-0 left-0 right-auto text-mint border-mint hover:bg-mint/10 hover:text-mint" />
+            </div>
+          </Carousel>
         </div>
         
         <div className="flex justify-center mt-12">
