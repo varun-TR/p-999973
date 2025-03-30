@@ -119,7 +119,7 @@ const MerchStore = () => {
   
     try {
       console.log("Sending request to backend...");
-      const response = await fetch("https://p-999973-w4e7.vercel.app/create-checkout-session", { // http://localhost:4242/create-checkout-session
+      const response = await fetch("/api/create-checkout-session", { // http://localhost:4242/create-checkout-session
         method: "POST",
         headers: {
           "Content-Type": "application/json",

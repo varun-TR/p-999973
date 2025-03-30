@@ -11,7 +11,7 @@ const app = express();
 
 // Allow multiple origins for CORS
 const allowedOrigins = [
-  "http://localhost:8080", // Local dev
+  "http://localhost:8080",// Local dev
   "https://p-999973-new.vercel.app", // Vercel production
 ];
 app.use(cors({
