@@ -13,6 +13,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:8080",// Local dev
   "https://portfolio-merch.onrender.com", // frontend production
+  "https://your-backend-name.onrender.com" // Add this later once Render gives you backend URL
   
 ];
 app.use(cors({
@@ -238,8 +239,9 @@ app.get("https://a856-2600-4040-4783-ee00-a8b2-73c8-8125-21be.ngrok-free.app/tes
 const PORT = process.env.PORT || 4242;
 
 // Only listen if running locally (not on Vercel)
-if (process.env.NODE_ENV !== "production") {
-    app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-  }
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+  
   
   module.exports = app;
