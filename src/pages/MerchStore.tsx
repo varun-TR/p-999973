@@ -6,6 +6,10 @@ import { useToast } from "@/components/ui/use-toast";
 import { ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe("pk_test_51R81UBABt917OZCQ6GtDijnobbeHYETCUEwL4MDHvgJKg5U6PVfhVsmCDrkFlZUF4N5dp0HgBzVTCcDWQZsOJZVH00488XboeF"); // Replace with your Stripe Publishable Key
+
 
 interface Product {
   id: string;
@@ -13,6 +17,8 @@ interface Product {
   price: number;
   image: string;
   description: string;
+  digitalDownload?: boolean;
+  fileUrl?: string;
 }
 
 const products: Product[] = [
@@ -43,6 +49,15 @@ const products: Product[] = [
     price: 9.99,
     image: "/placeholder.svg",
     description: "A pack of 10 high-quality vinyl stickers with programming jokes and designs."
+  },
+  {
+    id: "5",
+    name: "Developer Handbook (PDF)",
+    price: 1.00,
+    image: "/placeholder.svg",
+    description: "A downloadable PDF handbook for developers.",
+    digitalDownload: true,
+    fileUrl: "public/dev-handbook.pdf"
   }
 ];
 
@@ -50,6 +65,7 @@ const MerchStore = () => {
   const { toast } = useToast();
   const [cart, setCart] = useState<(Product & { quantity: number })[]>([]);
   const [showCart, setShowCart] = useState(false);
+  const [email, setEmail] = useState(""); // State for email input
 
   const addToCart = (product: Product) => {
     setCart(prevCart => {
@@ -91,22 +107,39 @@ const MerchStore = () => {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-  const handleCheckout = () => {
-    toast({
-      title: "Processing payment",
-      description: "Redirecting to payment gateway...",
-    });
-    
-    // Simulate payment processing
-    setTimeout(() => {
-      toast({
-        title: "Payment successful!",
-        description: "Thank you for your purchase.",
+  const handleCheckout = async () => {
+    console.log("Checkout button clicked");
+  
+    const stripe = await stripePromise;
+  
+    if (!stripe) {
+      console.error("Stripe is not loaded.");
+      return;
+    }
+  
+    try {
+      console.log("Sending request to backend...");
+      const response = await fetch("http://localhost:4242/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cart, email }),
       });
-      setCart([]);
-      setShowCart(false);
-    }, 2000);
+  
+      const { url } = await response.json();
+      console.log("Response from backend:", url);
+  
+      if (url) {
+        window.location.href = url; // Redirect to Stripe Checkout
+      } else {
+        console.error("Failed to create checkout session");
+      }
+    } catch (error) {
+      console.error("Error during checkout:", error);
+    }
   };
+
 
   return (
     <div className="min-h-screen bg-navy flex flex-col">
@@ -115,7 +148,7 @@ const MerchStore = () => {
       <main className="flex-grow pt-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-slate-light">Merchandise Store</h1>
+            <h1 className="text-3xl font-bold text-slate-light">Merchandise Store (Coming soon)</h1>
             <Button 
               variant="outline" 
               className="border-mint text-mint hover:bg-mint/10 relative"
@@ -148,12 +181,12 @@ const MerchStore = () => {
                     <span className="font-mono text-mint">${product.price.toFixed(2)}</span>
                   </div>
                   <p className="text-slate text-sm mb-4">{product.description}</p>
-                  <Button 
-                    onClick={() => addToCart(product)}
-                    className="w-full bg-mint hover:bg-mint/90 text-navy"
-                  >
-                    Add to Cart
-                  </Button>
+                    <Button 
+                      onClick={() => addToCart(product)}
+                      className="w-full bg-mint hover:bg-mint/90 text-navy"
+                    >
+                      Add to Cart
+                    </Button>
                 </div>
               </Card>
             ))}
@@ -188,6 +221,20 @@ const MerchStore = () => {
           ) : (
             <>
               <div className="flex-grow overflow-y-auto space-y-4 mb-6">
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-slate-light mb-2">
+                  Enter your email for order confirmation:
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 bg-navy-dark text-slate-light border border-slate-dark rounded focus:outline-none focus:ring-2 focus:ring-mint"
+                  required
+                />
+              </div>
                 {cart.map((item) => (
                   <div key={item.id} className="flex border-b border-slate-dark pb-4">
                     <div className="h-16 w-16 bg-navy-dark/50 flex items-center justify-center mr-4">

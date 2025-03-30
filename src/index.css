@@ -66,7 +66,26 @@
   .btn {
     @apply px-6 py-3 border border-mint text-mint rounded hover:bg-mint/10 transition-colors font-mono text-sm;
   }
+
+    
+  .jiggle-text span {
+    @apply inline-block transition-transform duration-100 ease-in-out;
+  }
+  
+  .jiggle-text:hover span {
+    animation: jiggle 0.2s ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes jiggle {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-3px) rotate(-1deg); }
+    50% { transform: translateY(0) rotate(1deg); }
+    75% { transform: translateY(3px) rotate(-1deg); }
+    100% { transform: translateY(0); }
+  }
 }
+
 
 .animate-delay-100 {
   animation-delay: 100ms;

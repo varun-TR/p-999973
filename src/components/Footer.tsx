@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         
         <p className="text-slate text-sm">
-          Designed & Built by Your Name
+          Designed & Built by Saivarun.
         </p>
         
         <p className="text-slate text-xs mt-2">

@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingBag } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +21,16 @@ const Navbar = () => {
 
   const scrollToSection = (id: string) => {
     setIsMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    
+    if (isHomePage) {
+      // If already on home page, scroll to the section
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate to home page with section hash
+      window.location.href = `/#${id}`;
     }
   };
 
@@ -32,7 +41,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <a href="#" className="text-mint font-bold text-2xl">Portfolio</a>
+      <Link to="/" className="text-mint font-bold text-2xl">Saivarun TR</Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-2">
