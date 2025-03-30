@@ -13,7 +13,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:8080",// Local dev
   "https://portfolio-merch.onrender.com", // frontend production
-  "https://your-backend-name.onrender.com" // Add this later once Render gives you backend URL
+  "https://p-999973-backend.onrender.com/create-checkout-session" // Add this later once Render gives you backend URL
   
 ];
 app.use(cors({
@@ -74,8 +74,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "http://localhost:8080/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "http://localhost:8080/cancel",
+      success_url: "https://portfolio-merch.onrender.com/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://portfolio-merch.onrender.com/cancel",
       customer_email: email,
       metadata: { hasDigitalProducts: cart.some((item) => item.digitalDownload) },
     });

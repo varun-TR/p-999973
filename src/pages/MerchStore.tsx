@@ -119,7 +119,7 @@ const MerchStore = () => {
   
     try {
       console.log("Sending request to backend...");
-      const response = await fetch("https://portfolio-merch-backend.onrender.com/create-checkout-session", { // http://localhost:4242/create-checkout-session
+      const response = await fetch("https://p-999973-backend.onrender.com/create-checkout-session", { // http://localhost:4242/create-checkout-session
         method: "POST",
         headers: {
           "Content-Type": "application/json",
