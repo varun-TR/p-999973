@@ -218,5 +218,6 @@ app.get("https://a856-2600-4040-4783-ee00-a8b2-73c8-8125-21be.ngrok-free.app/tes
     res.status(500).send("Email failed: " + error.message);
   }
 });
+
 const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
