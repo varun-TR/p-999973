@@ -8,7 +8,22 @@ const nodemailer = require("nodemailer");
 const fs = require("fs"); 
 
 const app = express();
-app.use(cors({ origin: "http://localhost:8080" }));
+
+// Allow multiple origins for CORS
+const allowedOrigins = [
+  "http://localhost:8080", // Local dev
+  "https://p-999973-new.vercel.app", // Vercel production
+];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+}));
+
 app.use(express.json());
 
 // Middleware for raw body parsing for webhooks
