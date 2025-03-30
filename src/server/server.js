@@ -7,13 +7,14 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 const fs = require("fs"); 
 
-const cors = require('cors');
+const app = express();
 
+// Allow multiple origins for CORS
 const allowedOrigins = [
-  "http://localhost:8080", // Local dev
-  "https://portfolio-merch.onrender.com", // Frontend production
+  "http://localhost:8080",// Local dev
+  "https://portfolio-merch.onrender.com", // frontend production
+  
 ];
-
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -22,9 +23,6 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
 }));
 
 app.use(express.json());
