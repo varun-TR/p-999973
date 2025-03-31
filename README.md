@@ -57,9 +57,6 @@ This project is built with .
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/df3c3f1d-3ea2-43e4-8192-253cbec998c0) and click on Share -> Publish.
-![enhanced_IMG_9806](https://github.com/user-attachments/assets/00360f88-a257-44aa-bd5f-fdbe88e2c5de)
-/Users/saivaruntanjoreraghavendra/Documents/GitHub/portfolio_/site/public/assest/geoweaver.png
-/Users/saivaruntanjoreraghavendra/Documents/GitHub/portfolio_/site/public/assest/image.jpg
 
 
 
