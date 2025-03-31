@@ -199,12 +199,6 @@ const Projects = () => {
             </div>
           </Carousel>
         </div>
-        
-        <div className="flex justify-center mt-12">
-          <Button variant="outline" className="btn">
-            View More Projects
-          </Button>
-        </div>
       </div>
     </section>
   );
