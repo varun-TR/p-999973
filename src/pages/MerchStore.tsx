@@ -22,43 +22,52 @@ interface Product {
 }
 
 const products: Product[] = [
-  {
-    id: "1",
-    name: "Developer T-Shirt",
-    price: 29.99,
-    image: "/placeholder.svg",
-    description: "Comfortable cotton t-shirt with a unique design for developers."
-  },
-  {
-    id: "2",
-    name: "Code Mug",
-    price: 19.99,
-    image: "/placeholder.svg",
-    description: "Ceramic mug with code snippets that change color when hot liquid is added."
-  },
-  {
-    id: "3",
-    name: "Portfolio Hoodie",
-    price: 49.99,
-    image: "/placeholder.svg",
-    description: "Cozy hoodie with my portfolio brand and custom design elements."
-  },
-  {
-    id: "4",
-    name: "Developer Stickers Pack",
-    price: 9.99,
-    image: "/placeholder.svg",
-    description: "A pack of 10 high-quality vinyl stickers with programming jokes and designs."
-  },
-  {
-    id: "5",
-    name: "Developer Handbook (PDF)",
-    price: 1.00,
-    image: "/placeholder.svg",
-    description: "A downloadable PDF handbook for developers.",
-    digitalDownload: true,
-    fileUrl: "public/dev-handbook.pdf"
-  }
+    {
+      id: "1",
+      name: "Mason PaperClip",
+      price: 4.99,
+      image: "https://i.imgur.com/r2AS86T.png",
+      description: "A stylish and durable paperclip with a Mason-themed design, perfect for organizing your documents."
+    },
+    {
+      id: "2",
+      name: "Mason Mug",
+      price: 2.99,
+      image: "https://i.imgur.com/q3WM0kt.png",
+      description: "A sturdy plastic mug featuring a Mason print, ideal for your daily coffee or tea."
+    },
+    {
+      id: "3",
+      name: "Mason Lipbalm",
+      price: 3.99,
+      image: "https://i.imgur.com/ZrJ182U.png",
+      description: "A nourishing lip balm with a Mason-inspired design, keeping your lips hydrated in style."
+    },
+    {
+      id: "4",
+      name: "Mason Waterbottle",
+      price: 2.99,
+      image: "https://i.imgur.com/Oro6ysF.png",
+      description: "A sleek water bottle with a Mason print, perfect for staying hydrated on the go."
+    },
+    {
+      id: "5",
+      name: "Mason ID Holder",
+      price: 1.00,
+      image: "https://i.imgur.com/4cVD7e6.png",
+      description: "A practical ID holder with a Mason design, great for keeping your cards secure and accessible.",
+      digitalDownload: true,
+      fileUrl: "public/dev-handbook.pdf" 
+    },
+    {
+      id: "6",
+      name: "Mason Stapler",
+      price: 2.99,
+      image: "https://i.imgur.com/LRqydeG.png",
+      description: "A Perfect for students and professionals to keep documents neat and organized with a touch of school pride.",
+      digitalDownload: true,
+      fileUrl: "public/dev-handbook.pdf" 
+    }
 ];
 
 const MerchStore = () => {
@@ -154,6 +163,7 @@ const MerchStore = () => {
               className="border-mint text-mint hover:bg-mint/10 relative"
               onClick={() => setShowCart(!showCart)}
             >
+
               <ShoppingCart className="mr-2" />
               <span>Cart</span>
               {totalItems > 0 && (
@@ -163,6 +173,8 @@ const MerchStore = () => {
               )}
             </Button>
           </div>
+          <p>Everything is legal, While I go to events at college, I collect these items and sell via online.</p>
+          <br></br>
 
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

@@ -18,10 +18,10 @@ const projects = [
     tags: ["Java", "React", "CSS", "Firebase", "Cypress", "Python"],
     links: {
       github: "https://github.com/ESIPFed/Geoweaver",
-      live: "https://geoweaver.dev/"
+      live: "https://geoweaver.dev/" 
     },
     featured: true,
-    image: "public/assest/geoweaver.png"
+    image: "https://i.imgur.com/OZVw848.png"
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const projects = [
       live: "https://www.canva.com/design/DAGXWs03NH8/wcGvwMGcHKLUX8goj5cAFQ/edit"
     },
     featured: true,
-    image: "public/assest/image.jpg"
+    image: "https://i.imgur.com/QoVFule.jpeg"
   },
   {
     id: 3,
