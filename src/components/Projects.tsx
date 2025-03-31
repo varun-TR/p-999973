@@ -13,27 +13,27 @@ import {
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A modern web application built with React, TypeScript, and Tailwind CSS. Features include user authentication, responsive design, and real-time data updates.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
+    title: "Geoweaver",
+    description: "An open-source, in-browser tool for simplifying data processing workflows with high-performance server support, featuring code history and workflow orchestration.",
+    tags: ["Java", "React", "CSS", "Firebase", "Cypress", "Python"],
     links: {
-      github: "#",
-      live: "#"
+      github: "https://github.com/ESIPFed/Geoweaver",
+      live: "https://geoweaver.dev/"
     },
     featured: true,
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2652&q=80"
+    image: "public/assest/geoweaver.png"
   },
   {
     id: 2,
-    title: "Project Two",
-    description: "An e-commerce platform with a focus on smooth user experience and optimized performance. Includes features like product filtering, cart management, and secure checkout.",
-    tags: ["Next.js", "Redux", "Stripe", "MongoDB"],
+    title: "DARIA-3o",
+    description: "A Chatbot created for Virginia Department of Transportation (VDOT) website, an integrated platform for information management.",
+    tags: ["Python","Streamlit", "LangChain", "FAISS"],
     links: {
-      github: "#",
-      live: "#"
+      github: "https://github.com/varun-TR/DARIA-3o",
+      live: "https://www.canva.com/design/DAGXWs03NH8/wcGvwMGcHKLUX8goj5cAFQ/edit"
     },
     featured: true,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2944&q=80"
+    image: "public/assest/image.jpg"
   },
   {
     id: 3,

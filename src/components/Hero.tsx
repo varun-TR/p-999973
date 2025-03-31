@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const [nameText] = useState("Your Name.");
+  const [nameText] = useState("Varun Tanjore.");
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -23,13 +23,8 @@ const Hero = () => {
             </span>
           ))}
         </h1>
-        <h2 className="text-4xl md:text-6xl font-bold text-slate mb-6">
-          I build things for the web.
-        </h2>
-        <p className="text-slate max-w-xl text-lg mb-12">
-          I'm a web developer specializing in building exceptional digital experiences. 
-          Currently, I'm focused on building accessible, human-centered products.
-        </p>
+        <h2 className="text-4xl md:text-6xl font-bold text-slate mb-6"> I craft Ai/Data solutions for the web. </h2> 
+        <p className="text-slate max-w-xl text-lg mb-12"> I’m Varun Tanjore, a Data Analytics Engineering graduate student and web developer passionate about creating impactful, data-driven digital experiences. Currently, I’m focused on building accessible, efficient solutions that harness the power of data to deliver transformative user experiences. </p>
         <Button 
           onClick={scrollToContact}
           className="btn flex items-center gap-2 group"

@@ -2,7 +2,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Code, Database, Layout, Palette, 
-  GitBranch, Server, ShieldCheck, Wand2
+  GitBranch, Server, ShieldCheck, Wand2,
+  Brain
 } from "lucide-react";
 
 const skillCategories = [
@@ -11,8 +12,8 @@ const skillCategories = [
     description: "Building responsive and intuitive user interfaces with modern frameworks and libraries.",
     icon: <Layout className="text-mint" size={32} />,
     skills: [
-      "HTML & CSS", "JavaScript (ES6+)", "TypeScript", 
-      "React", "Next.js", "Tailwind CSS"
+      "HTML & CSS", "JavaScript (ES6+)", 
+      "React", "Next.js"
     ]
   },
   {
@@ -30,7 +31,7 @@ const skillCategories = [
     icon: <Database className="text-mint" size={32} />,
     skills: [
       "MongoDB", "PostgreSQL", "Firebase",
-      "Data Modeling", "ORM/ODM", "Query Optimization"
+      "Data Modeling", "Supabase"
     ]
   },
   {
@@ -48,7 +49,7 @@ const skillCategories = [
     icon: <GitBranch className="text-mint" size={32} />,
     skills: [
       "Git & GitHub", "CI/CD", "Docker",
-      "Netlify", "Vercel", "AWS"
+      "Netlify", "Vercel", "AWS", "Render"
     ]
   },
   {
@@ -56,17 +57,20 @@ const skillCategories = [
     description: "Ensuring application reliability through comprehensive testing strategies.",
     icon: <ShieldCheck className="text-mint" size={32} />,
     skills: [
-      "Jest", "React Testing Library", "Cypress",
-      "Unit Testing", "Integration Testing", "E2E Testing"
+      "Pytest", "React Testing Library", "Cypress",
+      "Unit Testing", "Integration Testing", "BlackBox Testing", "WhiteBox Testing"
     ]
   },
   {
-    name: "Performance Optimization",
-    description: "Enhancing application speed and efficiency for better user experiences.",
-    icon: <Wand2 className="text-mint" size={32} />,
+    name: "Machine Learning Engineering",
+    description: "Designing and deploying scalable machine learning models for real-world applications.",
+    icon: <Brain className="text-mint" size={32} />,
     skills: [
-      "Lazy Loading", "Code Splitting", "Caching",
-      "Bundle Size Optimization", "Image Optimization", "Web Vitals"
+      "Deep Learning",
+      "TensorFlow/PyTorch",
+      "Model Deployment",
+      "Feature Engineering",
+      "Python"
     ]
   },
   {
@@ -74,8 +78,7 @@ const skillCategories = [
     description: "Proficiency in various programming languages for different application needs.",
     icon: <Code className="text-mint" size={32} />,
     skills: [
-      "JavaScript", "TypeScript", "Python",
-      "HTML", "CSS", "SQL"
+      "Python","HTML", "CSS", "SQL"
     ]
   }
 ];

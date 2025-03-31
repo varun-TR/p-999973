@@ -11,23 +11,12 @@ const About = () => {
         
         <div className="grid md:grid-cols-5 gap-12 items-start">
           <div className="md:col-span-3 opacity-0 animate-fade-in animate-delay-100">
-            <p className="text-slate text-lg mb-4">
-              Hello! I'm a passionate web developer with a love for creating beautiful, 
-              functional, and user-friendly websites and applications. My journey in web 
-              development began several years ago, and I've been hooked ever since.
-            </p>
-            <p className="text-slate text-lg mb-4">
-              I enjoy tackling complex problems and turning them into simple and intuitive designs. 
-              My goal is always to build applications that are not only functional but also 
-              provide great user experiences.
-            </p>
-            <p className="text-slate text-lg mb-4">
-              Here are a few technologies I've been working with recently:
-            </p>
-            
+          <p className="text-slate text-lg mb-4"> Hello! I’m Sam Tanjore, a passionate Data Analytics Engineering graduate student at George Mason University, Fairfax, VA, with a deep interest in leveraging data to solve complex problems. As a current Graduate Teaching Assistant and IT Support professional at the university, my journey is fueled by a relentless pursuit of knowledge in Data Modeling, Database Administration, and advanced analytics techniques. </p>
+           <p className="text-slate text-lg mb-4"> With a Master’s degree in progress, I blend my expertise in Natural Language Processing (NLP) with hands-on experience in IT solutions. My recent contributions to NASA's geoSMART and ESIPfed projects reflect my commitment to impactful research, where I apply my skills to deliver efficient, transformative outcomes that meet rigorous standards. </p> 
+           <p className="text-slate text-lg mb-4"> I thrive on turning complex challenges into intuitive, user-focused solutions. Whether through academic endeavors or practical applications, my goal is to innovate and create systems that not only function seamlessly but also provide exceptional user experiences. Here are a few technologies and areas I’ve been working with recently: Big Data, Database Management, Machine Learning, and programming. </p> 
             <div className="grid grid-cols-2 gap-2 max-w-md font-mono text-sm">
               <div className="flex items-center">
-                <span className="text-mint mr-2">▹</span> JavaScript (ES6+)
+                <span className="text-mint mr-2">▹</span> Python
               </div>
               <div className="flex items-center">
                 <span className="text-mint mr-2">▹</span> React
@@ -42,7 +31,7 @@ const About = () => {
                 <span className="text-mint mr-2">▹</span> Tailwind CSS
               </div>
               <div className="flex items-center">
-                <span className="text-mint mr-2">▹</span> RESTful APIs
+                <span className="text-mint mr-2">▹</span> SQL
               </div>
             </div>
           </div>
