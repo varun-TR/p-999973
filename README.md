@@ -1,18 +1,12 @@
-# Welcome to your Lovable project
+# Welcome to Ultimate portfolio project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/df3c3f1d-3ea2-43e4-8192-253cbec998c0
+**URL**: comming soon
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/df3c3f1d-3ea2-43e4-8192-253cbec998c0) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -63,6 +57,9 @@ This project is built with .
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/df3c3f1d-3ea2-43e4-8192-253cbec998c0) and click on Share -> Publish.
+
+
+
 
 ## I want to use a custom domain - is that possible?
 
