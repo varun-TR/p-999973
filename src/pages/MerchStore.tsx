@@ -157,7 +157,7 @@ const MerchStore = () => {
       <main className="flex-grow pt-24 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-slate-light">Merchandise Store (Coming soon)</h1>
+            <h1 className="text-3xl font-bold text-slate-light">My Mason Store (Coming soon)</h1>
             <Button 
               variant="outline" 
               className="border-mint text-mint hover:bg-mint/10 relative"
