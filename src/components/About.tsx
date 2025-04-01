@@ -41,7 +41,7 @@ const About = () => {
               <div className="absolute inset-0 bg-mint/20 rounded-lg transition-opacity group-hover:opacity-0 z-10"></div>
               <div className="relative border-2 border-mint rounded-lg overflow-hidden before:absolute before:inset-0 before:bg-navy-light/50 before:z-[5]">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                  src="https://i.imgur.com/aWs7WDP.jpeg" 
                   alt="Profile Photo" 
                   className="w-full aspect-square object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
