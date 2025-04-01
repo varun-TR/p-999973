@@ -37,38 +37,38 @@ const projects = [
   },
   {
     id: 3,
-    title: "Project Three",
-    description: "A dashboard application built for data visualization and analytics. Includes interactive charts, data filtering, and export capabilities.",
-    tags: ["React", "D3.js", "Node.js", "Express"],
+    title: "My Fullstack Portfolio",
+    description: "Full-stack portfolio built with Next.js, React, HTML, and CSS. It includes a merch shop with Stripe payments, Supabase integration, and Render hosting, along with interactive features.",
+    tags: ["React", "Next.js", "Node.js", "Express","Supabase","Stripe","Vitejs","HTML","CSS","Javascript","SQL"],
     links: {
-      github: "#"
+      github: "https://github.com/varun-TR/p-999973"
     }
   },
   {
     id: 4,
-    title: "Project Four",
-    description: "A mobile-first web application for task management with collaborative features. Includes real-time updates, notifications, and offline capability.",
-    tags: ["React Native", "GraphQL", "Apollo", "AWS"],
+    title: "Sentiment Analysis with Custom Naive Bayes and TF-IDF",
+    description: "A custom Naive Bayes classifier for sentiment analysis of tweets using TF-IDF and stemming. It preprocesses text, converts it into feature vectors, and predicts sentiment labels. Performance is evaluated with accuracy and a confusion matrix.",
+    tags: ["Python","Jupyter Notebook", "Numpy", "Pandas", "NLTK"],
     links: {
-      github: "#"
+      github: "https://github.com/varun-TR/custom_naivebayes"
     }
   },
   {
     id: 5,
-    title: "Project Five",
-    description: "A blog platform built with a focus on performance and SEO. Features include content management, comments, and social sharing.",
-    tags: ["Gatsby", "MDX", "Netlify CMS"],
+    title: "Infringement URL Analysis",
+    description: "This repository contains a Python script designed to flatten nested data structures, extract and analyze infringing URLs, and generate insightful summaries. The project utilizes parallel processing to efficiently handle large datasets, making it suitable for high-performance environments.",
+    tags: ["Python", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
     links: {
-      github: "#"
+      github: "https://github.com/varun-TR/infringement-url-analyzer/tree/470d2b5c7c08d0ad1913df88e1244adc4f0b8874"
     }
   },
   {
     id: 6,
-    title: "Project Six",
-    description: "A CLI tool for automating development workflows. Helps with tasks like code generation, project scaffolding, and deployments.",
-    tags: ["Node.js", "CLI", "Automation"],
+    title: "Atliq Company Sales Dashboard",
+    description: "This project uses SQL for data analysis and Tableau for visualizing Atliq's sales data. It answers key questions on revenue, sales trends, and market performance. Insights from the analysis help in shaping market strategies and improving sales. The dataset is visualized in Tableau to highlight growth and seasonal trends.",
+    tags: ["SQL", "Tableau"],
     links: {
-      github: "#"
+      github: "https://github.com/varun-TR/Atliq_sales_insights?tab=readme-ov-file"
     }
   }
 ];
