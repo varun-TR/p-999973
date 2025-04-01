@@ -35,7 +35,7 @@ const Navbar = () => {
 
   // Function to trigger resume download
   const handleResumeDownload = () => {
-    const resumeUrl = "public/assest/multiagent.pdf"; // Adjust path as needed 
+    const resumeUrl = "https://github.com/varun-TR/p-999973/raw/215dc18c79c981c09dd6ee8a7af4f1b0020b7ef5/public/assest/Resume.Saivarun__.pdf"; // Adjust path as needed 
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "multiagent.pdf";
@@ -47,12 +47,12 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 z-50 w-full px-6 md:px-12 py-4 transition-all duration-300 ${
-        isScrolled ? "bg-navy/90 backdrop-blur shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-transparent" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <Link to="/" className="text-mint font-bold text-2xl">
-          Saivarun TR
+         // Saivarun TR //
         </Link>
 
         {/* Desktop Navigation */}
@@ -73,12 +73,12 @@ const Navbar = () => {
             <span className="text-mint font-mono text-sm mr-1">05.</span> Shop
             <ShoppingBag className="ml-1 h-4 w-4 text-mint" />
           </Link>
-          <a href="/assets/Resume_Saivarun.pdf" download="Resume_Saivarun.pdf">
+          <a href="https://github.com/varun-TR/p-999973/raw/215dc18c79c981c09dd6ee8a7af4f1b0020b7ef5/public/assest/Resume.Saivarun__.pdf" download="Resume_Saivarun.pdf">
             <Button
               variant="outline"
               className="ml-4 border-mint text-mint hover:bg-mint/10"
             >
-              Resume
+            Resume
             </Button>
           </a>
         </nav>
@@ -130,14 +130,14 @@ const Navbar = () => {
             Shop
             <ShoppingBag className="mt-1 h-4 w-4 text-mint" />
           </Link>
-          <Button
-            variant="outline"
-            className="mt-4 border-mint text-mint hover:bg-mint/10 flex items-center"
-            onClick={handleResumeDownload}
-          >
+          <a href="https://github.com/varun-TR/p-999973/raw/215dc18c79c981c09dd6ee8a7af4f1b0020b7ef5/public/assest/Resume.Saivarun__.pdf" download="Resume_Saivarun.pdf">
+            <Button
+              variant="outline"
+              className="ml-4 border-mint text-mint hover:bg-mint/10"
+            >
             Resume
-            <Download className="ml-2 h-4 w-4" />
-          </Button>
+            </Button>
+          </a>
         </nav>
       </div>
     </header>
