@@ -173,7 +173,7 @@ const MerchStore = () => {
               )}
             </Button>
           </div>
-          <p>Everything is legal, While I go to events at college, I collect these items and sell via online.</p>
+          <p>Not for sale.</p>
           <br></br>
 
           {/* Products Grid */}
