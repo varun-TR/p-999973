@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: comming soon
+**URL**: [comming soon](https://portfolio-merch.onrender.com/)
 
 ## How can I edit this code?
 
